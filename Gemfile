@@ -8,7 +8,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  # for error
+#   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -17,7 +18,9 @@ end
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'devise', '~>2.1.3'
-gem 'mysql2'
+# 暂时注释 此gem更新失败
+# gem 'mysql2'
+gem "sqlite3"
 
 gem "babosa"
 gem "rails_autolink"
