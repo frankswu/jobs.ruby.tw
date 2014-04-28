@@ -2,7 +2,8 @@
 JobsRubyTw::Application.routes.draw do
   
   match '/about' => 'pages#about', :as => "about"
-  
+
+#  the Devise controller  
   devise_for :users
     
   resources :jobs do
