@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115062900) do
+ActiveRecord::Schema.define(:version => 20140430054941) do
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.string   "descrition"
+    t.string   "phone"
+    t.float    "totol_price"
+    t.string   "require"
+    t.datetime "commit_time"
+    t.datetime "event_time"
+    t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "remark"
+    t.integer  "weight"
+    t.integer  "category_id"
+    t.integer  "statues_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "jobs", :force => true do |t|
     t.string   "title"
@@ -30,6 +49,17 @@ ActiveRecord::Schema.define(:version => 20121115062900) do
   end
 
   add_index "jobs", ["user_id"], :name => "index_jobs_on_user_id"
+
+  create_table "tb_tests", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tests", :id => false, :force => true do |t|
+    t.integer  "id",         :limit => 8
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
