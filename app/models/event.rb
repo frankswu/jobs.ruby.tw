@@ -10,6 +10,9 @@ class Event < ActiveRecord::Base
   has_many :event_startusers
   has_many :tennis_users, :through => :event_startusers
 
+
+
+
   attr_accessible :event_category
   attr_accessible :event_statue
 

@@ -42,6 +42,15 @@ gem 'google_plus_helper'
 
 gem 'exception_notification'
 
+# https://github.com/ryanb/nested_form
+# form中嵌套多model
+gem "nested_form"
+
+
+# A collection of useful Rails generator scripts for scaffolding, layout files, authentication, and more.
+gem "nifty-generators", :group => :development
+
+
 # Want to automatically detect mobile devices that access your Rails application? Mobile Fu allows you to do just that. 
 # People can access your site from a Palm, Blackberry, iPhone, iPad, Nokia, etc. and it will automatically adjust the format of the request from :html to :mobile.
 gem "mobile-fu"
