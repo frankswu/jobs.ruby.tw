@@ -1,0 +1,5 @@
+class EventStatue < BaseEnum
+
+
+
+end

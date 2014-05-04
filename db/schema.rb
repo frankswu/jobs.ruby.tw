@@ -11,7 +11,76 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140430054941) do
+ActiveRecord::Schema.define(:version => 20140503033319) do
+
+  create_table "base_enums", :force => true do |t|
+    t.string   "enum_type"
+    t.string   "enum_value"
+    t.string   "enum_desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "type"
+  end
+
+  create_table "courts", :force => true do |t|
+    t.string   "address"
+    t.string   "phone"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "fee"
+    t.string   "court_desc"
+    t.string   "court_count"
+    t.string   "weights"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.integer  "city_id"
+    t.integer  "district_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "evaluates", :force => true do |t|
+    t.string   "evaluate"
+    t.float    "score"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "event_courts", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "court_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "event_evaluates", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "evaluate_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "event_owners", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "tennis_user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "event_partakes", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "tennis_user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "event_startusers", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "tennis_user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -28,8 +97,11 @@ ActiveRecord::Schema.define(:version => 20140430054941) do
     t.integer  "weight"
     t.integer  "category_id"
     t.integer  "statues_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "base_enum_id"
+    t.integer  "event_category_id"
+    t.integer  "event_statue_id"
   end
 
   create_table "jobs", :force => true do |t|
@@ -50,9 +122,30 @@ ActiveRecord::Schema.define(:version => 20140430054941) do
 
   add_index "jobs", ["user_id"], :name => "index_jobs_on_user_id"
 
-  create_table "tb_tests", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "tennis_users", :force => true do |t|
+    t.string   "account"
+    t.string   "name"
+    t.string   "password"
+    t.string   "roles"
+    t.datetime "register_date"
+    t.integer  "age"
+    t.string   "address"
+    t.string   "birthday"
+    t.integer  "gender_id"
+    t.string   "photo"
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "tennis_age"
+    t.integer  "tennis_level"
+    t.integer  "personal_info"
+    t.integer  "login_times"
+    t.string   "last_login_date"
+    t.string   "device_flag"
+    t.integer  "user_state_id"
+    t.string   "integral"
+    t.string   "account_level"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "tests", :id => false, :force => true do |t|
