@@ -8,8 +8,9 @@ class Event < ActiveRecord::Base
   belongs_to :event_statue
 
   has_many :event_startusers
-  has_many :tennis_users, :through => :event_startusers
+  has_many :start_users, :through => :event_startusers
 
+  # accepts_nested_attributes :event_startusers
 
 
 

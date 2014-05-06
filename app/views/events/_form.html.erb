@@ -1,0 +1,78 @@
+<%= form_for @event do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :descrition %><br />
+    <%= f.text_field :descrition %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :totol_price %><br />
+    <%= f.text_field :totol_price %>
+  </p>
+  <p>
+    <%= f.label :require %><br />
+    <%= f.text_field :require %>
+  </p>
+  <p>
+    <%= f.label :commit_time %><br />
+    <%= f.datetime_select :commit_time %>
+  </p>
+  <p>
+    <%= f.label :event_time %><br />
+    <%= f.datetime_select :event_time %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </p>
+  <p>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </p>
+  <p>
+    <%= f.label :remark %><br />
+    <%= f.text_field :remark %>
+  </p>
+  <p>
+    <%= f.label :weight %><br />
+    <%= f.number_field :weight %>
+  </p>
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.number_field :category_id %>
+  </p>
+  <p>
+    <%= f.label :statues_id %><br />
+    <%= f.number_field :statues_id %>
+  </p>
+  <p>
+    <%= f.label :base_enum_id %><br />
+    <%= f.number_field :base_enum_id %>
+  </p>
+  <p>
+    <%= f.label :event_category_id %><br />
+    <%= f.number_field :event_category_id %>
+  </p>
+  <p>
+    <%= f.label :event_statue_id %><br />
+    <%= f.number_field :event_statue_id %>
+  </p>
+  <% f.fields_for :event_startusers do |builder| %>
+  <p>
+    <%= builder.label :event_statue_id %><br />
+    <%= builder.number_field :event_statue_id %>
+  </p>
+  <% end %>
+  <p><%= f.submit %></p>
+<% end %>
