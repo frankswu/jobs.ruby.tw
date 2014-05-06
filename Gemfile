@@ -76,3 +76,5 @@ group :test, :development do
   # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
   gem "capybara"
 end
+
+gem "mocha", :group => :test

@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 JobsRubyTw::Application.routes.draw do
   
+  resources :events
+
   match '/about' => 'pages#about', :as => "about"
 
 #  the Devise controller  

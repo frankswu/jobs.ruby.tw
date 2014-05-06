@@ -1,0 +1,64 @@
+<% title "Event" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+<p>
+  <strong>Descrition:</strong>
+  <%= @event.descrition %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @event.phone %>
+</p>
+<p>
+  <strong>Totol Price:</strong>
+  <%= @event.totol_price %>
+</p>
+<p>
+  <strong>Require:</strong>
+  <%= @event.require %>
+</p>
+<p>
+  <strong>Commit Time:</strong>
+  <%= @event.commit_time %>
+</p>
+<p>
+  <strong>Event Time:</strong>
+  <%= @event.event_time %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @event.address %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @event.longitude %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @event.latitude %>
+</p>
+<p>
+  <strong>Remark:</strong>
+  <%= @event.remark %>
+</p>
+<p>
+  <strong>Weight:</strong>
+  <%= @event.weight %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @event.category_id %>
+</p>
+<p>
+  <strong>Statues:</strong>
+  <%= @event.statues_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_event_path(@event) %> |
+  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", events_path %>
+</p>
