@@ -7,10 +7,10 @@ class Event < ActiveRecord::Base
   belongs_to :event_category
   belongs_to :event_statue
 
-  has_many :event_startusers
+  has_many :event_startusers, :foreign_key => "event_id",  :class_name => "EventStartuser"
   has_many :start_users, :through => :event_startusers
 
-  # accepts_nested_attributes :event_startusers
+  accepts_nested_attributes_for :start_users, :reject_if => lambda { |a| a[:name].blank? }
 
 
 

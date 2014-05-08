@@ -9,6 +9,8 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @user = TennisUser.new(:name => 'puts you name')
+    puts "event.start_users.size = {}"
   end
 
   def create

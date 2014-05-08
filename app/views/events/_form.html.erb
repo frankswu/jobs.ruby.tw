@@ -68,10 +68,15 @@
     <%= f.label :event_statue_id %><br />
     <%= f.number_field :event_statue_id %>
   </p>
-  <% f.fields_for :event_startusers do |builder| %>
+  <!--  活动下面的参与者  由于多对多关系，不能使用例子上面的代码，需要自己想办法实现-->
+
+    <%= @user.name %>
+
+
+  <% f.fields_for :start_users do |builder| %>
   <p>
-    <%= builder.label :event_statue_id %><br />
-    <%= builder.number_field :event_statue_id %>
+    <%= builder.label :name %><br />
+    <%= builder.number_field :name %>
   </p>
   <% end %>
   <p><%= f.submit %></p>

@@ -122,6 +122,11 @@ ActiveRecord::Schema.define(:version => 20140503033319) do
 
   add_index "jobs", ["user_id"], :name => "index_jobs_on_user_id"
 
+  create_table "tb_tests", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tennis_users", :force => true do |t|
     t.string   "account"
     t.string   "name"
@@ -148,10 +153,25 @@ ActiveRecord::Schema.define(:version => 20140503033319) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "test_model2s", :force => true do |t|
+    t.string   "name"
+    t.integer  "event_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "test_models", :force => true do |t|
+    t.string   "name"
+    t.integer  "event_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tests", :id => false, :force => true do |t|
     t.integer  "id",         :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.integer  "event_id"
   end
 
   create_table "users", :force => true do |t|
